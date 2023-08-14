@@ -1,0 +1,5 @@
+psutil
+platform
+math
+httpx
+pillow
