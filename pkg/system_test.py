@@ -136,12 +136,12 @@ def moreinfo():
     try:
         hostinfo = platform.uname()  # 获取主机信息
         info = cpuinfo.get_cpu_info()
-        cpuinfo = info["brand_raw"] # 获取 CPU 信息
+        cpu_info = info["brand_raw"] # 获取 CPU 信息
         from pkg.plugin.host import __plugins__
 
         stateinfo = [
             Status(None, "OS", [hostinfo.system]),  # 操作系统
-            Status(None, "CPU", [cpuinfo]),  # CPU
+            Status(None, "CPU", [cpu_info]),  # CPU
             Status(None, "Version", [hostinfo.release]),  # 操作系统版本
             Status(None, "Plugin", ["共 " + str(len(__plugins__)) + " 个插件"]),
         ]
@@ -151,15 +151,9 @@ def moreinfo():
 
 
 def drawstatus(qq="", img_path="", nickname="", create_by=True):
-    try:
-        disk_state = [(i.name, i.text, i.percent) for i in diskstate()]
-    except Exception as err:
-        return None, err
+    disk_state = [(i.name, i.text, i.percent) for i in diskstate()]
     diskcardh = 40 + (30 + 70) * len(disk_state) + 40
-    try:
-        more_info = [(i.name, i.text, i.percent) for i in moreinfo()]
-    except Exception as err:
-        return None, err
+    more_info = [(i.name, i.text, i.percent) for i in moreinfo()]
 
     moreinfocardh = 30 + (30 + 45) * len(more_info) + 30 - 10
     if img_path != 0 and os.path.exists(img_path):
