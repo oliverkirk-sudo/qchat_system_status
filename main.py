@@ -25,13 +25,6 @@ async def get_status(plugin_host: PluginHost):
     return img_b64
 
 
-def send_msg(kwargs, msg):
-    host: pkg.plugin.host.PluginHost = kwargs["host"]
-    host.send_person_message(kwargs["launcher_id"], msg) if kwargs[
-        "launcher_type"
-    ] == "person" else host.send_group_message(kwargs["launcher_id"], msg)
-
-
 class HelloPlugin(Plugin):
 
     # 插件加载时触发
@@ -47,7 +40,7 @@ class HelloPlugin(Plugin):
             plugin_host: PluginHost = kwargs["host"]
             loop = asyncio.new_event_loop()
             result = loop.run_until_complete(get_status(plugin_host))
-            send_msg(kwargs, [Image(base64=result)])
+            event.add_return("reply", [Image(base64=result)])
             event.prevent_default()
             event.prevent_postorder()
 
