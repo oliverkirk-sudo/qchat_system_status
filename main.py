@@ -16,7 +16,7 @@ from pkg.utils import context
 )
 async def get_status(plugin_host: PluginHost):
     botmgr: QQBotManager = context.get_qqbot_manager()
-    task = asyncio.create_task(botmgr.bot.bot_profile.get())
+    task = asyncio.create_task(botmgr.adapter.bot.bot_profile.get())
     await asyncio.wait([task])
     nickname = task.result().nickname
     print(nickname)
