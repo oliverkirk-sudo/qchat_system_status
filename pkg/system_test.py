@@ -1,6 +1,6 @@
 import base64
 import os.path
-
+import cpuinfo
 import psutil
 import platform
 import math
