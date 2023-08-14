@@ -24,7 +24,7 @@ class Status:
 def get_random_bg():
     try:
         session = httpx.Client()
-        url = "https://api.yimian.xyz/img?type=moe"
+        url = "https://api.yimian.xyz/img/?type=moe"
         image_io = io.BytesIO(session.get(url, follow_redirects=True).content)
         return image_io
     except Exception as e:
@@ -142,7 +142,7 @@ def moreinfo():
         stateinfo = [
             Status(None, "OS", [hostinfo.system]),  # 操作系统
             Status(None, "CPU", [cpuinfo]),  # CPU
-            Status(None, "Version", [hostinfo.version]),  # 操作系统版本
+            Status(None, "Version", [hostinfo.release]),  # 操作系统版本
             Status(None, "Plugin", ["共 " + str(len(__plugins__)) + " 个插件"]),
         ]
         return stateinfo
@@ -502,7 +502,7 @@ def drawstatus(qq="", img_path="", nickname="", create_by=True):
             text=info[0],
             fill=font_color,
             font=font,
-            anchor="mm",
+            anchor="lm",
         )
         draw_text_bold(
             draw,
