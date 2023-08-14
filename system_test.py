@@ -143,9 +143,7 @@ def moreinfo():
             Status(None, "OS", [hostinfo.system]),  # 操作系统
             Status(None, "CPU", [cpuinfo]),  # CPU
             Status(None, "Version", [hostinfo.version]),  # 操作系统版本
-            Status(
-                None, "Plugin", ["共 " + str(len(__plugins__)) + " 个插件"]
-            )
+            Status(None, "Plugin", ["共 " + str(len(__plugins__)) + " 个插件"]),
         ]
         return stateinfo
     except Exception as e:
