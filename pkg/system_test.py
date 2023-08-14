@@ -60,12 +60,12 @@ def botruntime():
         now = time.time()
         sys_uptime_seconds = int(now - boot_time) % 60
         sys_uptime_minutes = int(now - boot_time) // 60 % 60
-        sys_uptime_hours = int(now - boot_time) // 60 // 60 % 60
-        sys_uptime_days = int(now - boot_time) // 60 // 60 // 60 % 24
+        sys_uptime_hours = int(now - boot_time) // 60 // 60 % 24
+        sys_uptime_days = int(now - boot_time) // 60 // 60 // 24
         qchat_uptime_seconds = int(now - qchat_time) % 60
         qchat_uptime_minutes = int(now - qchat_time) // 60 % 60
-        qchat_uptime_hours = int(now - qchat_time) // 60 // 60 % 60
-        qchat_uptime_days = int(now - qchat_time) // 60 // 60 // 60 % 24
+        qchat_uptime_hours = int(now - qchat_time) // 60 // 60 % 24
+        qchat_uptime_days = int(now - qchat_time) // 60 // 60 // 24
         return f"QChatGPT 已运行 {int(qchat_uptime_days)} 天 {qchat_uptime_hours}:{qchat_uptime_minutes}:{qchat_uptime_seconds} | 系统运行 {int(sys_uptime_days)} 天 {sys_uptime_hours}:{sys_uptime_minutes}:{sys_uptime_seconds}"
     except Exception as e:
         return "", e
