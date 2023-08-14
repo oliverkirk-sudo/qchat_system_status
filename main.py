@@ -1,6 +1,6 @@
 from pkg.plugin.models import *
 from pkg.plugin.host import EventContext, PluginHost
-from plugins.qchat_system_status.system_test import drawstatus
+from plugins.qchat_system_status.pkg.system_test import drawstatus
 from mirai import Image
 from pkg.utils import context
 
