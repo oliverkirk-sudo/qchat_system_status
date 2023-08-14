@@ -45,7 +45,6 @@ def getnickname(qq):
         session = httpx.Client()
         url = f"https://users.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins={qq}"
         text = session.get(url).content
-        # .replace("portraitCallBack", "").encode('gbk').decode('utf-8')
         print(text)
         v = eval(text)
 
@@ -136,7 +135,8 @@ def diskstate():
 def moreinfo():
     try:
         hostinfo = platform.uname()  # 获取主机信息
-        cpuinfo = platform.processor()  # 获取 CPU 信息
+        info = cpuinfo.get_cpu_info()
+        cpuinfo = info["brand_raw"] # 获取 CPU 信息
         from pkg.plugin.host import __plugins__
 
         stateinfo = [
