@@ -11,7 +11,7 @@ from pkg.utils import context
 @register(
     name="QchatSystemStatus",
     description="生成系统状态图",
-    version="0.1",
+    version="0.4",
     author="oliverkirk-sudo",
 )
 async def get_status(plugin_host: PluginHost):
