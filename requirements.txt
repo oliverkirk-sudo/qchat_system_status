@@ -3,3 +3,4 @@ platform
 math
 httpx
 pillow
+py-cpuinfo
