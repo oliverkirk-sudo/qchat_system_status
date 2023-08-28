@@ -1,7 +1,7 @@
 # qchat_system_status
 适用于QChatGPT的系统状态查看插件，以图片形式输出
 效果如图：
-![000000000-000000000-F44C9F68572D2761AFABC3B54BE881DD](https://github.com/oliverkirk-sudo/qchat_system_status/assets/78022033/e394d1b3-6a81-4fca-ad62-946bf7b2adbb)
+![000000000-000000000-BDFE2919EF554594F362C008C64FE164](https://github.com/oliverkirk-sudo/qchat_system_status/assets/78022033/354be0f8-676b-42ca-aff5-c83dc15b22d3)
 
 ## 一些问题
 
